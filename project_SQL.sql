@@ -1,60 +1,30 @@
-CREATE TABLE database {
-	Name				VARCHAR
-	ID					VARCHAR
-	BarcodeID			INT
-	DateOfProduction	DATE
-	Quantity			INT
-	OrderQuantity		INT
-	Price				FLOAT
-	ExpirationDate		DATE
+CREATE TABLE "PRODUCT" (
+	ID					INT,		
+	Name				VARCHAR,
+	Quantity			INT	,
+	Price				DOUBLE,
+	ExpirationDate		INT,
 	SellerInfo			VARCHAR
-}
+);
 
-INSERT INTO database (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, Price, ExpirationDate, SellerInfo)
-VALUES ('Apple', '00001-A1', 1231658478, 2017-09-21, 200, 150, 2.00, 10302017, 'California farm');
+CREATE TABLE "PURCHASE" (
+	ID			INT,
+	Name		VARCHAR,
+	Quantity	INT,
+	Price		DOUBLE
+);
 
-INSERT INTO database (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, Price, ExpirationDate, SellerInfo)
-VALUES('Pencil', '00002-P8', 4567897643, 2016-02-20, 400, 30, 1.00, null, 'BIG');
+INSERT INTO PRODUCT (ID, Name, Quantity, Price, ExpirationDate, SellerInfo)
+VALUES (1, 'Apple', 200, 2.00, 20171001, 'California Farm');
 
-INSERT INTO database (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, Price, ExpirationDate, SellerInfo)
-VALUES ('Broom', '04134-B3', 7894566548, 2016-05-02, 50, 5, 15.00, null, 'Boston broom');
+INSERT INTO PRODUCT (ID, Name, Quantity, Price, ExpirationDate, SellerInfo)
+VALUES (2, 'Pencil', 400, 1.00, 00000000, 'BIG');
 
-INSERT INTO database (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, Price, ExpirationDate, SellerInfo)
-VALUES ('Note', '13041-N3', 8521479630, 2015-02-25, 200, 10, 12.00, null, 'Five Star');
+INSERT INTO PRODUCT (ID, Name, Quantity, Price, ExpirationDate, SellerInfo)
+VALUES (3, 'Broom', 50, 15.00, 00000000, 'Boston Broom');
 
-INSERT INTO database (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, Price, ExpirationDate, SellerInfo)
-VALUES ('PorkBelly', '10403-P2', 984265130, 2017-09-22, 60, 20, 15.00, 10012017, 'Sweethome Alabama');
+INSERT INTO PRODUCT (ID, Name, Quantity, Price, ExpirationDate, SellerInfo)
+VALUES (4, 'Note', 200, 12.00, 00000000, 'Five Star');
 
-SELECT *
-FROM database
-WHERE Quantity > 0; 
-
-
-CREATE TABLE OrderDatabase {
-	Name				VARCHAR
-	ID					VARCHAR
-	BarcodeID			INT
-	DateOfProduction	DATE
-	Quantity			INT
-	OrderQuantity		INT
-	SellerInfo			VARCHAR
-	OrderID				INT
-}
-
-INSERT INTO OrderDatabase (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, SellerInfo, OrderID)
-VALUES ('Apple', '00001-A1', 1231658478, 2017-09-21, 200, 150, 'California farm', 010);
-
-INSERT INTO OrderDatabase (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, SellerInfo, OrderID)
-VALUES('Pencil', '00002-P8', 4567897643, 2016-02-20, 400, 30, 'BIG', 028);
-
-INSERT INTO OrderDatabase (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, SellerInfo, OrderID)
-VALUES ('Broom', '04134-B3', 7894566548, 2016-05-02, 50, 5, 'Boston broom', 098);
-INSERT INTO OrderDatabase (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, SellerInfo, OrderID)
-VALUES ('Note', '13041-N3', 8521479630, 2015-02-25, 200, 10, 'Five Star', 001);
-
-INSERT INTO OrderDatabase (Name, ID, BarcodeID, DateOfProduction, Quantity, OrderQuantity, SellerInfo, OrderID)
-VALUES ('PorkBelly', '10403-P2', 984265130, 2017-09-22, 60, 20, 'Sweethome Alabama', 077);
-
-SELECT *
-FROM OrderDatabase
-WHERE OrderID <> null;
+INSERT INTO PRODUCT (ID, Name, Quantity, Price, ExpirationDate, SellerInfo)
+VALUES (5, 'Pork Belly', 60, 15.00, 20171021, 'Sweethome Alabama');
