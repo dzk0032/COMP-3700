@@ -8,6 +8,11 @@ ID		Name			Quantity		Price		ExpirationDate		SellerInfo
 4		Note			200				12.00		00000000			Five Star
 5		Pork Belly		60				15.00		20171021			Sweethome Alabama
 
+database used:
+SQLite
+
+database file: PRODUCT.db
+
 
 Scenario 1: purchase a product
 
